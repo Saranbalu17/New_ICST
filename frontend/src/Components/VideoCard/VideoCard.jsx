@@ -174,7 +174,7 @@ const VideoCard = ({ video, role }) => {
       };
 
       const response = await fetch(
-        `${baseUrl}/LMS_SaveStudentContentTracking`,
+        `${baseUrl}/LMS/LMS_SaveStudentContentTracking`,
         {
           method: "POST",
           headers: {
@@ -206,7 +206,7 @@ const VideoCard = ({ video, role }) => {
       };
 
       const response = await fetch(
-        `${baseUrl}/LMS_SaveStudentContentTracking`,
+        `${baseUrl}/LMS/LMS_SaveStudentContentTracking`,
         {
           method: "POST",
           headers: {
@@ -215,13 +215,13 @@ const VideoCard = ({ video, role }) => {
           body: JSON.stringify(payload),
         }
       );
-
+console.log(response)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const result = await response.json();
-
+    
       if (result.listofSaveStudentContentTrackingResponse) {
         const transformedData = result.listofSaveStudentContentTrackingResponse
           .map((item) => {
