@@ -215,7 +215,7 @@ const VideoCard = ({ video, role }) => {
           body: JSON.stringify(payload),
         }
       );
-console.log(response)
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -252,7 +252,7 @@ console.log(response)
           // Sort by lastPlayed in descending order (most recent first)
           .sort((a, b) => b.lastUpdated - a.lastUpdated);
 
-        console.log("Transformed Data:", transformedData); // Debug log
+       
         return transformedData;
       }
       return [];
