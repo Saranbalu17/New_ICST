@@ -833,9 +833,7 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
         alt="ICST Logo"
         className="mx-auto mb-4 w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px]"
       />
-      <h2 className="text-center font-bold text-xl sm:text-2xl mb-6 sm:mb-7 bg-gradient-to-r from-teal-400 to-cyan-500 text-transparent bg-clip-text">
-        {title}
-      </h2>
+     
       <hr className="mb-5 border-teal-500 max-w-[400px] sm:max-w-[500px] md:max-w-[600px] mx-auto" />
 
       {visibleSections.map((section) => {
