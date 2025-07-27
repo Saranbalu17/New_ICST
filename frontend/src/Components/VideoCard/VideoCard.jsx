@@ -818,25 +818,10 @@ const VideoCard = ({ video, role }) => {
                   <span className="text-sm text-gray-400">
                     {completedVideos} / {totalVideos}
                   </span>
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-sm text-gray-400">
-                    {totalVideos > 0
-                      ? Math.round((completedVideos / totalVideos) * 100)
-                      : 0}
-                    %
-                  </span>
+                  
                 </div>
               </div>
-              <div className="mt-2 bg-gray-700 rounded-full h-2">
-                <div
-                  className="bg-purple-500 h-2 rounded-full transition-all duration-300"
-                  style={{
-                    width: `${totalVideos > 0
-                      ? (completedVideos / totalVideos) * 100
-                      : 0}%`,
-                  }}
-                ></div>
-              </div>
+              
             </div>
 
             {/* Course Content */}
