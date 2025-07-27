@@ -706,6 +706,7 @@ const VideoCard = ({ video, role }) => {
                 </button>
               )}
             </div>
+             <button className="bg-blue-500 text-white font-bold px-4 py-3 rounded-md" onClick={()=>navigate("/student-dashboard")}>Back</button>
           </div>
         </header>
 
