@@ -55,8 +55,8 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
             ColCode:colCode,
             CollegeId:collegeId,
             AssignmentId: 0,
-            FeedBackId: parseInt(PreAssessment) || 8,
-            StudentId: parseInt(adminUserId) || 2,
+            FeedBackId:  8,
+            StudentId: parseInt(adminUserId),
             ProgramId: 0,
             BranchId: 0,
             SemId: 0,
@@ -302,8 +302,8 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
         ColCode: "0001",
         CollegeId: 1,
         AssignmentId: 0,
-        FeedBackId: parseInt(feedbackId) || 8,
-        StudentId: parseInt(studentId) || 2,
+        FeedBackId:  8,
+        StudentId: parseInt(adminUserId),
         EmployeeId: 0,
         CourseId: 0,
         HostelId: 0,
@@ -332,8 +332,8 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
         const preAssessmentData = {
           GrpCode: grpCode,
           ColCode:colCode,
-          StudentiD: parseInt(adminUserId) || 2,
-          FeedBACKID: parseInt(feedbackId) || 8,
+          StudentiD: parseInt(adminUserId) ,
+          FeedBACKID: 8,
         };
 
         console.log(
