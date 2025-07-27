@@ -766,6 +766,12 @@ const StudentDashboard = () => {
 
             {/* Course Info */}
             <div className="mt-6 space-y-5 text-gray-800">
+              <div>
+                 <p className="text-base">
+                <strong className="font-bold">Description: </strong>{" "}
+                  {selectedCourse?.courseName || "Untitled Course"} {selectedCourse?.departmentName || "N/A"} 
+              </p>
+              </div>
               <div className="flex items-center text-sm">
                 <BookOpen size={20} className="mr-2 text-indigo-600" />
                 <span className="font-semibold">
@@ -773,11 +779,19 @@ const StudentDashboard = () => {
                 </span>
               </div>
               <p className="text-base">
-                <strong className="font-medium">Course ID:</strong>{" "}
-                {selectedCourse?.courseId || "N/A"}
+                <strong className="font-bold">Instructor Name: </strong>{" "}
+                {selectedCourse?.employeeName || "N/A"}
               </p>
               <p className="text-base">
-                <strong className="font-medium">Amount:</strong> ₹
+                <strong className="font-bold">Department: </strong>{" "}
+                {selectedCourse?.departmentName || "N/A"}
+              </p>
+              <p className="text-base">
+                <strong className="font-bold">Designation: </strong>{" "}
+                {selectedCourse?.designationName || "N/A"}
+              </p>
+              <p className="text-base">
+                <strong className="font-bold">Amount: </strong> ₹
                 {selectedCourse?.amount || "0.00"}
               </p>
             </div>
