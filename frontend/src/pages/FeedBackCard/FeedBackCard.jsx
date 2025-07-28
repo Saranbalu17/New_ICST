@@ -869,7 +869,12 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
                   : q.questionText;
                 return (
                   <div key={q.questionId} className="mb-4" >
-                    <p className="font-bold text-gray-700 mb-2 text-base sm:text-lg">
+                   <p className="font-bold text-gray-700 mb-2 text-2xl " const style = {{
+  fontFamily: 'Nunito, sans-serif',
+  fontSize: '1.5em',
+  fontWeight: 500,
+  color: '#212529',
+}}>
                       Q{questionNumber}. {questionText}
                       <span className="text-red-600 ml-1">*</span>
                     </p>
