@@ -58,12 +58,7 @@ const Features = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-          <Link
-            to="/"
-            className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
-          >
-            Request a Demo
-          </Link>
+          
         </div>
       </section>
       
