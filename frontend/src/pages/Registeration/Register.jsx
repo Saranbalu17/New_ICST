@@ -61,7 +61,7 @@ const Signup = () => {
       <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Create your account</h2>
         <p className="text-sm text-gray-500 mb-6">Join and start learning from 1000+ curated courses.</p>
-
+ <img src="https://beesprod.beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/Cloudilya/LMS/Exam%20image.png" className="w-full rounded-md shadow-md mb-4"/>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="text-sm text-gray-700">Username</label>
