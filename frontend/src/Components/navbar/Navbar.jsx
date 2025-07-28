@@ -49,12 +49,7 @@ const Navbar = () => {
           >
             Sign Up
           </Link>
-          <button
-            onClick={openModal}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-          >
-            Request Demo
-          </button>
+         
         </div>
 
         {/* Mobile Menu Toggle */}
