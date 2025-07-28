@@ -174,7 +174,7 @@ const Sidebar = () => {
             </div>
             <div>
               <p className="font-medium text-gray-700 truncate">{name.toUpperCase()}</p>
-              <p className="text-xs text-gray-500 capitalize">{role}</p>
+              <p className="text-xs text-gray-500 capitalize">{role==="STUDENT"?"LEARNER":"STUDENT"}</p>
             </div>
           </div>
 
