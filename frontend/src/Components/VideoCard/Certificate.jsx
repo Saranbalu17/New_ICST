@@ -1,5 +1,6 @@
 import React from 'react';
- 
+import "./Certificate.css"
+
 const Certificate = ({ courseInfo }) => {
   const studentName = courseInfo?.studentName || 'Student Name';
   const instructorName = courseInfo?.employeeName || 'Instructor Name';
@@ -7,7 +8,7 @@ const Certificate = ({ courseInfo }) => {
   const programName = courseInfo?.programName || 'Program Name';
   const semester = courseInfo?.semester || 'Semester';
   const collegeName = courseInfo?.collegeName || 'College Name';
- 
+
   return (
     <div
       id="certificate"
@@ -25,11 +26,17 @@ const Certificate = ({ courseInfo }) => {
         position: 'relative',
       }}
     >
+      <div className="logo-container">
+        <img
+          src="https://beesprod.beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/Cloudilya/LMS/bees.png"
+          alt="Institution Logo"
+        />
+      </div>
       {/* Certificate Header */}
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '15px' }}>
         <h1
           style={{
-            fontSize: '48px',
+            fontSize: '20px',
             fontFamily: 'Georgia, serif',
             fontWeight: 'bold',
             color: '#1f2937',
@@ -37,13 +44,13 @@ const Certificate = ({ courseInfo }) => {
         >
           Certificate of Completion
         </h1>
-        <p style={{ fontSize: '18px', color: '#4b5563', marginTop: '8px' }}>
+        <p style={{ fontSize: '10px', color: '#4b5563', marginTop: '5px' }}>
           This certifies that
         </p>
       </div>
- 
+
       {/* Student Name */}
-      <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '24px' }} >
         <h2
           style={{
             fontSize: '30px',
@@ -63,7 +70,7 @@ const Certificate = ({ courseInfo }) => {
           }}
         ></div>
       </div>
- 
+
       {/* Certificate Body */}
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <p style={{ fontSize: '18px', color: '#374151' }}>
@@ -79,19 +86,22 @@ const Certificate = ({ courseInfo }) => {
         >
           {courseName}
         </h3>
-        <p style={{ fontSize: '16px', color: '#4b5563', marginTop: '8px' }}>
+        <p style={{ fontSize: '10px', color: '#4b5563', marginTop: '8px' }}>
           {programName} - {semester}
         </p>
-        <p style={{ fontSize: '16px', color: '#4b5563', marginTop: '4px' }}>
+        <p style={{ fontSize: '10px', color: '#4b5563', marginTop: '4px' }}>
           {collegeName}
         </p>
-        <p style={{ fontSize: '16px', color: '#4b5563', marginTop: '4px' }}>
+        <p style={{ fontSize: '10px', color: '#4b5563', marginTop: '4px' }}>
           Awarded on {new Date().toLocaleDateString()}
         </p>
       </div>
- 
+      <div className='relative w-full h-full'>
+        <img className='absolute -top-21  w-[700px] h-[200px]' src="https://beesprod.beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/Cloudilya/LMS/crtname.png" alt="bgimage" />
+
+      </div>
       {/* Signatures */}
- <div
+      <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -119,7 +129,7 @@ const Certificate = ({ courseInfo }) => {
           <p style={{ fontSize: '14px', color: '#374151' }}>Director Signature</p>
         </div>
       </div>
- 
+
       {/* Decorative Elements */}
       <div
         style={{
@@ -150,5 +160,5 @@ const Certificate = ({ courseInfo }) => {
     </div>
   );
 };
- 
+
 export default Certificate;
