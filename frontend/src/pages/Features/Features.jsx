@@ -9,7 +9,7 @@ const Features = () => {
     <div className="pt-20">
       <section className="py-16 px-6 max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
-          Cloudilya LMS Features
+          GPMS TRANSPORTAL Features
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
