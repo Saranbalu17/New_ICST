@@ -455,17 +455,16 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
                     className="hidden"
                   />
                   <span
-                    className={`flex justify-center items-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 text-sm sm:text-base font-medium cursor-pointer transition-all duration-300 ${
-                      isSelected
+                    className={`flex justify-center items-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 text-sm sm:text-base font-medium cursor-pointer transition-all duration-300 ${isSelected
                         ? value <= 2
                           ? "bg-red-500 text-white border-red-600"
                           : value <= 4
-                          ? "bg-yellow-500 text-white border-yellow-600"
-                          : value <= 6
-                          ? "bg-blue-500 text-white border-blue-600"
-                          : "bg-green-500 text-white border-green-600"
+                            ? "bg-yellow-500 text-white border-yellow-600"
+                            : value <= 6
+                              ? "bg-blue-500 text-white border-blue-600"
+                              : "bg-green-500 text-white border-green-600"
                         : "bg-white text-gray-700 border-gray-300"
-                    } hover:border-teal-500 hover:bg-gray-100 hover:shadow-sm`}
+                      } hover:border-teal-500 hover:bg-gray-100 hover:shadow-sm`}
                   >
                     {value}
                   </span>
@@ -478,7 +477,7 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
         return (
           <div className="flex flex-wrap gap-3 justify-center">
             {uniqueOptions.map((option, index) => (
-              <label key={option.optionId} className="flex items-center m-0">
+              <label key={index} className="flex items-center m-0">
                 <input
                   type="checkbox"
                   checked={responses[question.questionId]?.includes(
@@ -505,12 +504,11 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
           <div className="flex flex-wrap gap-2 justify-center">
             {uniqueOptions.map((option, index) => (
               <button
-                key={option.optionId}
-                className={`${baseClasses} ${
-                  responses[question.questionId] === option.optionValue
+                key={index}
+                className={`${baseClasses} ${responses[question.questionId] === option.optionValue
                     ? "bg-teal-500 text-white border-teal-600"
                     : "text-gray-700"
-                } min-w-[100px] sm:min-w-[120px] py-1.5`}
+                  } min-w-[100px] sm:min-w-[120px] py-1.5`}
                 onClick={() =>
                   handleResponse(question.questionId, option.optionValue)
                 }
@@ -528,12 +526,11 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
           <div className="flex flex-wrap gap-2 justify-center">
             {uniqueOptions.map((option, index) => (
               <button
-                key={option.optionId}
-                className={`${baseClasses} ${
-                  responses[question.questionId] === option.optionValue
+                key={index}
+                className={`${baseClasses} ${responses[question.questionId] === option.optionValue
                     ? "bg-teal-500 text-white border-teal-600"
                     : "text-gray-700"
-                } min-w-[90px] sm:min-w-[100px] py-1.5`}
+                  } min-w-[90px] sm:min-w-[100px] py-1.5`}
                 onClick={() =>
                   handleResponse(question.questionId, option.optionValue)
                 }
@@ -598,11 +595,10 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
               {uniqueOptions.map((option, index) => (
                 <button
                   key={option.optionId}
-                  className={`${baseClasses} ${
-                    responses[question.questionId] === option.optionValue
+                  className={`${baseClasses} ${responses[question.questionId] === option.optionValue
                       ? "bg-teal-500 text-white border-teal-600"
                       : "text-gray-700"
-                  } min-w-[90px] sm:min-w-[100px] py-1.5`}
+                    } min-w-[90px] sm:min-w-[100px] py-1.5`}
                   onClick={() =>
                     handleResponse(question.questionId, option.optionValue)
                   }
@@ -697,11 +693,10 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
             {uniqueOptions.map((option, index) => (
               <button
                 key={option.optionId}
-                className={`${baseClasses} ${
-                  responses[question.questionId] === option.optionValue
+                className={`${baseClasses} ${responses[question.questionId] === option.optionValue
                     ? "bg-teal-500 text-white border-teal-600"
                     : "text-gray-700"
-                } min-w-[90px] sm:min-w-[100px] py-1.5 text-sm md:text-base`}
+                  } min-w-[90px] sm:min-w-[100px] py-1.5 text-sm md:text-base`}
                 onClick={() =>
                   handleResponse(question.questionId, option.optionValue)
                 }
@@ -834,22 +829,22 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
 
       <hr className="mb-5 border-teal-500 max-w-[400px] sm:max-w-[500px] md:max-w-[600px] mx-auto" />
 
-      {visibleSections.map((section) => {
+      {visibleSections.map((section,index) => {
         const isCurrentSection =
           section.sectionId === uniqueSections[currentSectionIndex].sectionId;
         const sectionQuestions = isCurrentSection
           ? section.questions.filter((q) => {
-              const globalIndex = allQuestions.findIndex(
-                (aq) => aq.questionId === q.questionId
-              );
-              return (
-                globalIndex <= visibleQuestionIndex || responses[q.questionId]
-              );
-            })
+            const globalIndex = allQuestions.findIndex(
+              (aq) => aq.questionId === q.questionId
+            );
+            return (
+              globalIndex <= visibleQuestionIndex || responses[q.questionId]
+            );
+          })
           : section.questions;
 
         return (
-          <div key={section.sectionId} className="mb-5">
+          <div key={index} className="mb-5">
             <h3 className="text-center font-bold text-lg sm:text-xl bg-gradient-to-r from-teal-400 to-cyan-500 text-transparent bg-clip-text mb-3">
               {section.sectionName}
             </h3>
@@ -868,17 +863,13 @@ const FeedBackCard = ({ title = "Feedback Form" }) => {
                   ? questionTextMatch[2]
                   : q.questionText;
                 return (
-                  <div key={q.questionId} className="mb-4">
-                    <p
-                      className="font-bold text-gray-700 mb-2 text-2xl "
-                      const
-                      style={{
-                        fontFamily: "Nunito, sans-serif",
-                        fontSize: "1.5em",
-                        fontWeight: 600,
-                        color: "#212529",
-                      }}
-                    >
+                  <div key={index} className="mb-4" >
+                    <p className="font-bold text-gray-700 mb-2 text-2xl " const style={{
+                      fontFamily: 'Nunito, sans-serif',
+                      fontSize: '1.5em',
+                      fontWeight: 600,
+                      color: '#212529',
+                    }}>
                       Q{questionNumber}. {questionText}
                       <span className="text-red-600 ml-1">*</span>
                     </p>
